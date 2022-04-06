@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -9,11 +13,26 @@
  */
 public class Producto {
     
-    private Integer Codigo;
+    private int Codigo;
     private String Nombre;
     private double Precio;
+    private ArrayList<Producto> LProducto;
+    
+    
+    public ArrayList<Producto> getLProducto() {
+        return LProducto;
+    }
 
-    public Producto(Integer Codigo, String Nombre, double Precio) {
+    public void setLProducto(ArrayList<Producto> LProducto) {
+        this.LProducto = LProducto;
+    }
+    
+    
+    public Producto(){
+        LProducto=new ArrayList<Producto>();
+    }
+
+    public Producto(int Codigo, String Nombre, double Precio) {
         this.Codigo = Codigo;
         this.Nombre = Nombre;
         this.Precio = Precio;
@@ -43,13 +62,33 @@ public class Producto {
         this.Precio = Precio;
     }
 
-    
     public void InsertarDatos(){
         
-        
+         //variables locales
+         int Codigo;
+         String Nombre;
+         double Precio;
+         
+         Scanner Entrada=new Scanner(System.in);
+         System.out.println("Inserte los siguientes datos");
+         System.out.println("Codigo:");
+         Codigo=Entrada.nextInt();
+         
+         System.out.println("Nombre:");
+         Nombre=Entrada.next();
+         
+         System.out.println("Precio:");
+         Precio=Entrada.nextDouble();
+         
+         LProducto.add(new Producto(Codigo,Nombre,Precio));
+         
     }
     
     public void ImprimirDatos(){
+        
+    }
+    
+    public void EliminarDatos(){
         
     }
     

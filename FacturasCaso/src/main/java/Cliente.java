@@ -24,7 +24,7 @@ public class Cliente {
     
     //globales
     public Operaciones operaciones=new Operaciones();
-    public ArrayList<Cliente> Lclientes=new ArrayList<Cliente>();
+    public ArrayList<Cliente> Lclientes;
     
     
     //atributos
@@ -34,6 +34,8 @@ public class Cliente {
     
     
     public Cliente(){
+        
+        Lclientes=new ArrayList<Cliente>();
         
     }
 
@@ -90,7 +92,6 @@ public class Cliente {
         System.out.println("CLiente creado!");
         
         
-
         /*
         operaciones.Mensaje("Ingrese la cédula");
         cedula=operaciones.ValidarEntero();
@@ -148,6 +149,10 @@ public class Cliente {
         for(int i=0;i<Lclientes.size();i++){
             operaciones.Mensaje("Nombre:"+Lclientes.get(i).Nombre+"\nCedula"+Lclientes.get(i).Rut+"\n"+" Telefono"+Lclientes.get(i).Telefono);
         }
+    }
+    
+    public void ModificarDato(){
+        
     }
     
     
